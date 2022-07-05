@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student App</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            margin: 2px;
+        }
+        .menu{
+            display: flex;
+            justify-content: space-around;
+            background-color: aqua;
+        }
+        .menu a{
+            font-size: 15px;
+            font-weight: bolder;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        To fetch dynamic data in express we need template engine 
+        bcz in pure html not possible to handle dyanic data,html with more power-hbs
+hbs is a express. js wrapper for the handlebars. js javascript template engine. Handlebars. js is a template engine to make writing html code easier
+     -->
+     <h1>Student Data Collection</h1>
+     <div class="menu">
+       <a href="/add">Add Student</a>
+       <a href="/view">View Student</a>
+       <a href="/search">Search Student</a>
+       <a href="/update">Update Student</a>
+       <a href="/delete">Delete Student</a>
+       
+
+     </div>
+</body>
+</html>
