@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Js try catch</h2>
+    <p>Please input a number between 10 and 100:</p>
+    <input id="demo" type="text">
+    <button type="button" onClick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+    <script>
+        function myFunction() {
+            const message =document.getElementById("p01");
+            message.innerHTML="";
+            let x=document.getElementById("demo").value;
+            try {
+                if(x == "") throw "empty";
+                if(isNaN(x))  throw "not a number";
+                x= Number(x);
+                if(x < 10 ) throw "Too low";
+                if(x > 100) throw "Too High";
+                if(x<0) throw "Negative input";
+                
+            }
+            catch(err) {
+                message.innerHTML ="Input is :" + err;
+            }
+        }
+    </script>
+</body>
+</html>

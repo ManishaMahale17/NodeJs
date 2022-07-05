@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h2>JS PROMISES</h2>
+    <p id="demo"></p>
+    <script>
+      /*
+      ///*Need: js is alws syncronous and single threaded lang.js never wait for code or function result when they take some is direct execute next code
+      //Javascript does not  wait to execute code it directly jump one line to other and we got result to remove this frawback use promises
+
+      //promise is an object that returns a value which you hope to receive in the future,but not now
+       //two codes in promises:1)producing code and cusuming code
+       let data=new Promise(function(resolved,rejected){
+        resoved("done")//produncing code
+       })
+       data.then((resp)=>{
+        console.log("resp",resp)
+        resolve resp;//cosuming code
+       })
+      */
+      /*let data = 1
+      console.log('data1:' + data)
+      data = 2
+      console.log('data2:' + data)
+      data = 3
+      console.log('data3:' + data)
+      //output:data1:1
+               data2:2
+               data3:3
+      */
+      /*
+      let data = 1
+      console.log('data1:' + data)
+      data = 2
+      setTimeout(() => {
+        console.log('data2:' + data)
+      }, 2000)
+
+      data = 3
+      console.log('data3:' + data)
+      OUtPUt: data1:1
+              data3:3
+              data2:3
+      */
+      /*
+      let data = 1
+      setTimeout(() => {
+        console.log('data1:' + data)
+      }, 2000)
+      data = 2
+      console.log('data2:' + data)
+      data = 3
+      console.log('data3:' + data)
+      //OUTPUT:
+      //data2:2
+        data3:3
+        data1:3
+     */
+      //we goet this type of problem in js so we use promises
+
+      //eg promise
+      //resolved: resove ,error ala tr rejected
+      let data = new Promise((resolved, rejected) => {
+        setTimeout(() => {
+          resolved('Done has been executed') //we can use here any data,object ,array
+          //resolved({name:'Manisha',age:29})
+        }, 2000)
+      })
+      //not get exact output as we require
+      //console.log(data)//o/p-promise{pending},prototype:promise,promisestate:fulfilled,promise result:Done has been executed.
+      data.then((item) => {
+        console.log(item) //o/p:Done has been executed ...directly we got this o/p
+      })
+      //fetch is the function promise gives that function to call api
+      //finally function works on both resolved and rejected
+    </script>
+  </body>
+</html>
