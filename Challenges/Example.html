@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //check if value is string ?
+      const val = 'Test'
+      if (typeof val === 'string') {
+        console.log('variable is string')
+      } else {
+        console.log('variable is not string')
+      }
+      //heck if value is number? in js
+      const value = 12
+      if (typeof value == 'number') {
+        console.log('Number')
+      } else {
+        console.log('Not a number')
+      }
+      const num1 = 'testt'
+
+      if (typeof num1 == 'number') {
+        document.write(num1 + ' is a number <br/>')
+      } else {
+        document.write(num1 + ' is not a number <br/>')
+      }
+      //chcek if value is array?
+      const valuee = ['BMW', 'Volvo', 'Scoda', 'Mahindra']
+      if (valuee instanceof Array) {
+        //isinstance of array to find if array present or not
+        console.log('Array')
+      } else {
+        console.log('Not a array')
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="input_number" placeholder="Enter the number" />
+    <input type="button" value="Find" id="input_button" />
+    <script>
+      let rev = 0
+      let number = 123456
+      rev = Number(String(number).split('').reverse().join(''))
+      console.log('Reverse Number is:' + rev)
+      //another method
+
+      function findReverse() {
+        let number = Number(document.getElementById('input_number').value)
+
+        let reverse = Number(String(number).split('').reverse().join(''))
+
+        alert('Reverse : ' + reverse)
+      }
+
+      let button = document.getElementById('input_button')
+      button.onclick = findReverse()
+    </script>
+  </body>
+</html>

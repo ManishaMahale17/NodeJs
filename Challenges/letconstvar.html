@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //array const
+      const a = [2, 3, 4, 5, 6]
+      a[3] = 45
+      console.log(a) //[2,3,4,5,6]
+      //object const
+      const ob = { type: 'Suit', model: 'raymond', color: 'Pink' }
+      //ob = { type: 'Dress', model: 'njikk', color: 'Pink' }//uncauth type error:assignment to const variable
+
+      ob.color = 'red' //{ type: 'Suit', model: 'raymond', color: 'red' }
+      ob.owner = 'Manu' //{ type: 'Suit', model: 'raymond', color: 'red',owner:'Manu' }
+
+      console.log(ob)
+      //string const
+      const str = 'abhu gstrry mmshsjjs'
+      console.log(str + 'Ggggsggs' + 'ggsttstts') //abhu gstrry mmshsjjsGgggsggsggsttstts
+      const badString1 = 'This is a test'
+      const badString2 = 'This is a test1222222'
+      const badString3 = 'This is a test222'
+      console.log(badString1)
+      const bigmouth = `I've got no right to take my place... ${badString1}`
+      console.log(bigmouth) //I've got no right to take my place... This is a test
+
+      const bigmouth1 = "I've got no right to take my place..."
+      console.log(bigmouth1)
+      //
+      const myString = '123'
+      const myNum = Number(myString)
+      console.log(typeof myNum)
+      const myNum2 = 123
+      const myString2 = myNum2.toString()
+      console.log(typeof myString2)
+    </script>
+  </body>
+</html>

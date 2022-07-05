@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //reversenumber
+      let rev = 0
+      let num = 654321
+      rev = Number(String(num).split('').reverse().join(''))
+      console.log('reverse number is:' + rev)
+
+      //reversestring
+      let str = 'Javascript'
+      function reverseString(str) {
+        return str.split('').reverse().join('')
+      }
+      console.log(reverseString(str))
+
+      //without using function
+      let rever = 0
+      let stri = 'Hello'
+      rever = String(String(stri).split('').reverse().join(''))
+      console.log('reverse string :' + rever)
+    </script>
+  </body>
+</html>
