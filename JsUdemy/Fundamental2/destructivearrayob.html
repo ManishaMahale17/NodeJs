@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructive array</title>
+  </head>
+  <body>
+    <script>
+      //Destructuring Array
+      //index based destructure karto array madhe
+      //array ko variables ke ander unpacked karna destructring hota hai
+      let fruits = ['apple', 'mango', 'banana']
+      let [fruit1, fruit2, fruit3] = fruits
+      console.log(fruit1) //apple
+      console.log(fruit2) //mango
+      console.log(fruit3) //banana
+
+      //destructing object
+      //key based destructure karto object madhe
+      let user = { name: 'Manu', age: 20, email: 'manu@gmail.com' }
+      /*
+      let { email, name, mob = 999 } = user
+      console.log(email) //manu@gmail.com
+      console.log(name) //manu
+      console.log(mob)//999
+      */
+      //using spread oprator
+      let { ...email } = user
+      console.log(email) //{name: 'Manu', age: 20, email: 'manu@gmail.com'}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      function fruitProcessor(apples, bananas) {
+        const juice = `I want ${apples} apples and ${bananas} bananas for breakfast`
+        return juice
+        //console.log(juice)not acceptable here
+      }
+      console.log(fruitProcessor(2, 1)) // 2,1//function alws call outside loop
+
+      //to accesss juice value we need to store in somewhere
+      const mixJuice = fruitProcessor(2, 1)
+      console.log(mixJuice) //I want 2 apples and 1 bananas for breakfast
+      const mixedJuice = fruitProcessor(4, 5)
+      console.log(mixedJuice) //I want 4 apples and 5 bananas for breakfast
+
+      //function call many time
+      function singer(AR, KK, UN) {
+        console.log(AR, KK, UN)
+      }
+      singer(1, 2, 3) // 1 2 3
+      singer(2, 3, 4) //2 3 4
+      singer('SS', 'BB', 'NN') //SS BB NN
+      singer(5, 7)
+      // no parameter
+      function sing() {
+        console.log('sing a song')
+      }
+      sing() //sing a song
+      sing(1, 2, 3) //sing a song
+
+      function calAge(birthyear) {
+        return 2022 - birthyear //in a function an expression is use
+      }
+      console.log(calAge(1993)) //29
+      //function without name ie anonomes function
+      //it is basically expression
+      const calAge1 = function (birthyear) {
+        return 2022 - birthyear
+      }
+      console.log(calAge1(1992)) //29
+      //or
+      const age = calAge1(1993)
+      console.log(age) //29
+      console.log(age)
+      console.log(age)
+    </script>
+  </body>
+</html>

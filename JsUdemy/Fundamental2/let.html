@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let</title>
+  </head>
+  <body>
+    <script>
+      console.log('---------------------')
+
+      for (let x2 = 1; x2 <= 10; x2++) {
+        //var x2 = 66 x2 already declared
+        console.log(x2) //1 to 10
+      }
+      console.log(x2) //x2 is not defined
+      console.log('---------------------')
+      console.log('---------------------')
+      let x = 10
+      {
+        let x = 19
+        console.log(x) //19
+      }
+      console.log(x) //10
+
+      //
+
+      {
+        let x1 = 122
+
+        console.log(x1) //122
+      }
+      //console.log(x1) //not defined
+
+      console.log('---------------------')
+
+      function varTest() {
+        var xx = 1
+        {
+          var xx = 2
+          console.log(xx) //2
+        }
+        console.log(xx) //2
+      }
+      varTest()
+
+      //
+      console.log('---------------------')
+      function letTest() {
+        let lx = 1
+        {
+          let lx = 2
+          console.log(lx) //2
+        }
+        console.log(lx) //1
+      }
+      letTest()
+      console.log('---------------------')
+      var xg = 'global'
+      let xy = 'Local'
+      console.log(this.xg) //globle
+      console.log(this.xy) //undefined
+      console.log('---------------------')
+
+      /* if (x) {
+      let foo;
+       let foo; // SyntaxError thrown.
+     }
+     */
+      console.log('---------------------')
+      let sx = 1
+
+      switch (sx) {
+        case 0: {
+          let foo
+          break
+        }
+        case 1: {
+          let foo
+          break
+        }
+      }
+      console.log(sx) //1
+      /*console.log('---------------------')
+      console.log(hi) //Cannot access 'hi' before initialization
+      console.log(he)
+      let hi = 3
+      let he = 4
+      */
+      console.log('---------------------')
+      console.log(hii) //Cannot access 'hi' before initialization
+      console.log(hee)
+      var hii = 3 //undefined
+      var hee = 4 //undefined
+      console.log('---------------------')
+      function test() {
+        var foo = 33
+        if (foo) {
+          let foo = foo + 55 // ReferenceError
+          console.log(foo) //88
+        }
+      }
+      test()
+      //console.log(foo)//error not defined
+    </script>
+  </body>
+</html>

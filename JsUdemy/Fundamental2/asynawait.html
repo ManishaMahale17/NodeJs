@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asy/await</title>
+  </head>
+  <body>
+    <script>
+      //js synchrously work but sometimes results not get same its different
+      console.log('a')
+      setTimeout(() => {
+        console.log('b')
+      }, 1000)
+      console.log('c') //a c b
+      //to resolve this problem we use asyn await function
+      //Using promises we resolve this problem but we write so much code for using promise
+      /*
+      function getData() {
+        let handlePromise = new Promise((resolve, rejected) => {
+          setTimeout(() => {
+            resolve('all done')
+          }, 1000)
+        })
+        handlePromise.then((x) => {
+          console.log(x)
+        })
+      }
+      getData() //all done
+      */
+      /*
+      async function getData() {
+        let handlePromise = new Promise((resolve, rejected) => {
+          setTimeout(() => {
+            resolve('all done')
+          }, 1000)
+        })
+        let x = await handlePromise
+        console.warn(x)
+      }
+      getData() //all done
+      */
+      //we have 1 or more promuses then
+      async function getData() {
+        let handlePromise1 = new Promise((resolve, rejected) => {
+          setTimeout(() => {
+            resolve('all done1')
+          }, 1000)
+        })
+        let handlePromise2 = new Promise((resolve, rejected) => {
+          setTimeout(() => {
+            resolve('all done2')
+          }, 1000)
+        })
+        let x1 = await handlePromise1
+        let x2 = await handlePromise2
+
+        console.warn(x1) //all done1
+        console.warn(x2) //all done2
+        //ek async ghetl tr multiple await function use karu shkato
+      }
+      getData() //all done
+    </script>
+  </body>
+</html>

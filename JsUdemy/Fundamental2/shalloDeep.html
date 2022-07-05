@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shallow/Deep</title>
+  </head>
+  <body>
+    <h1>Shallow/Deep Copy</h1>
+    <script>
+      /*
+        Object Copy:eka object madhe dusra assign kartana data copy nahi hot referance copy hoto
+
+        */
+      //   let obj = {
+      //     name: 'Manu',
+      //   }
+      //   //console.log(obj)//Manu
+      //   let user = obj//not copy datta referance copy(memory location)
+      //   user.name = 'Manisha Tambe'
+      //   console.log(obj)//Manisha Tambe//
+      //   //object copy by two types by value and by referance
+
+      //without block
+      const namee = 'manuV'
+      const us = namee
+      us.namee = 'Vaibhav'
+      console.log(namee) //manuV
+      //
+      const arr = [2, 3, 4, 5, 6]
+      arr[2] = 5
+      console.log(arr) //(5) [2, 3, 5, 5, 6]
+      console.log('-------------------------------')
+      let x = 'Sangam'
+      let y = x
+      y = 'Mahale'
+      console.log(x) //Sangam
+      //bcz jevha apan variable la copy karto tevha value copy hote pan jecha object la copy karto tevha tyachi memory location copy hote
+      console.log('-------------------------------') //nested object chi pan copy karavi lagel
+      //   const xc = 'Sweety'
+      //   const xy = xc
+      //   xy = 'Mahale'
+      //   console.log(xc)//shalloDeep.html:48 Uncaught TypeError: Assignment to constant variable.
+      /*
+      const obj = {
+        name: 'Manu',
+      }
+      const user = obj
+      user.name = 'Manisha'
+      console.log(obj) //Manisha
+      */
+      // to try this using diff ways to solve the problem using shallow and deepcopy
+      /*
+
+     1)Shallow copy:In Shallow copy, a copy of the original object is stored and only the reference address is finally copied.
+     
+     
+      console.log('-------------------------------')
+      const obj = {
+        name: 'Manu',
+      }
+      const user = Object.assign({}, obj)
+      //const user={...obj}//or using this insted of    const user = Object.assign({}, obj)
+      user.name = 'Manisha'
+      console.log('Object is:', obj) //Manu
+      console.log('User is:', user) //Manisha
+     //not copy memory loaction only copy values
+     */
+
+      //object madhe obj asel tr
+      /*
+      let obj = {
+        name: 'Manu',
+        address: {
+          city: 'Belapur',
+          state: 'MH',
+        },
+      }
+      let user = { ...obj }
+      user.address.city = 'Pune'
+      console.log('Object is:', obj)
+      //{name: 'Manu', address: {…}}address: {city: 'Pune', state: 'MH'}name: "Manu"
+      
+      console.log('User is:', user)
+      //{name: 'Manu', address: {…}address: {city: 'Pune', state: 'MH'}name: "Manu"
+      //here chahe obj and user bcs object ke ander obj hai isliye
+      //so solve this use deep copp
+      /*
+     2)Deep copy:A deep copy of an object is a copy whose properties do not share the same references (point to the same underlying values) as those of the source object from which the copy was made
+         he copy of the original object and the repetitive copies both are stored.
+     */ let obj = {
+        name: 'Manu',
+        address: {
+          city: 'Belapur',
+          state: 'MH',
+        },
+      }
+      let user = JSON.parse(JSON.stringify(obj))
+      user.address.city = 'Pune'
+      console.log('Object is:', obj) //address: {city: 'Belapur', state: 'MH'}
+
+      console.log('User is:', user) //address: {city: 'Pune', state: 'MH'}name: "Manu"
+      //seep copy not work for function date to solve this there is no function availble in js
+      //lodash using this we do it in nodejs we have to install it frist npm i lodash
+    </script>
+  </body>
+</html>

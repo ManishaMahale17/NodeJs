@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      const personGroup = {
+        firstName: 'Manisha', //key and value pair
+        lastName: 'Tambe',
+        age: 29,
+        city: 'Belapur',
+        friends: ['Vaibhav', 'Amol', 'Deepak', 'Pooja'],
+      }
+
+      //object is fundamental concept above is the object literal synthax
+      //arrays is used to ordered data9index format) but objects used unstructured data
+
+      //
+      console.log(personGroup)
+      console.log(personGroup.city)
+      console.log(personGroup['lastName'])
+
+      const nameKey = 'Name'
+      console.log(personGroup['first' + nameKey])
+      console.log(personGroup['last' + nameKey])
+      //console.log(personGroup.'last'+nameKey)//error unexpected string
+
+      //prompt is a build in function used to any script used to popup window on input field
+      const selectInterest = prompt(
+        'What do you want to know about Jonas? Choose between fristName,lastName,age,city and friends',
+      )
+
+      console.log(selectInterest) //age
+
+      //access age property used
+      console.log(personGroup[selectInterest]) //29
+      //undefined is the falsy value
+      //"Manisha has 3 friends,and her best friend is called Vaibhav"
+
+      console.log(
+        `${personGroup.firstName} has ${personGroup.friends.length} friends,and her best friend is called ${personGroup.friends[0]}`,
+      )
+
+      //object methods
+    </script>
+  </body>
+</html>

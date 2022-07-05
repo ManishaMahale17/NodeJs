@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexicle</title>
+  </head>
+  <body>
+    <script>
+      //lexiclescope: range of any function or etc
+      // this kudh ko indicate kata hai
+      //abhi kabhi kisi function ke ander uska this kho jata hai to lexicle scope use karenge range check karne ke liye aur lexicle function ki problem arrow function resolved karta hai
+      let data = {
+        list: 'friend',
+        names: ['Manu', 'Sam', 'Sweety'],
+        getfriens: function () {
+          console.log(this.list) //friend
+          console.log(this.names) //Manu,Sam,Sweety
+          /*
+          // this lost consfused bcz another functun start
+          
+          this.names.map(function (item) {
+            console.log(this.list, item)//undefined manu undefined sam....
+           
+        })
+        */
+
+          // using arrow function we solve this problem bcz arro function ke ander kudka this nahi hota wo parent ka use karta hai
+          this.names.map((item) => {
+            console.log(this.list, item) //frieds manu friends sam....
+            //so jevha lexicle scope cha problem yeil to arrow function resolve karen
+          })
+        },
+      }
+      data.getfriens()
+    </script>
+  </body>
+</html>

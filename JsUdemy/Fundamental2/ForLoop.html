@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForLoop</title>
+  </head>
+  <body>
+    <script>
+      //for loop without using let var const
+      for (i = 1; i <= 10; i++) {
+        //console.log(`Lifting weight repeation ${i}`)
+        //output->repartion 1 to 10
+      }
+      console.log(`Lifting weight repeation ${i}`)
+      //lifting weight repeation 11
+
+      //using var
+      for (var rep = 1; rep <= 10; rep++) {
+        console.log(`repatation ${rep}`) //repeation 1 to 10
+      }
+      console.log(`repatation ${rep}`) //repeation 11
+
+      //using let
+      for (let repe = 1; repe <= 10; repe++) {
+        console.log(`repetion ${repe}`) //repetion 1 to 10
+      }
+      //console.log(`repetion ${repe}`)//output is:repe is not defined
+
+      //using const
+      //for (const ini = 1; ini <= 10; ini++) {
+      //console.log(`Hiii ${ini}`)//Uncaught TypeError: Assignment to constant variable.
+      //declare the variable using the let keyword instead of using const
+      // }
+      //console.log(`Hiii ${ini}`)//ForLoop.html:32 Uncaught TypeError: Assignment to constant variable.
+
+      //array example
+      const jonas = ['jonas', 'Mahale', 2022 - 1993, 'Deveoper', true]
+      const types = []
+      for (let i = 0; i < jonas.length; i++) {
+        console.log(jonas[i])
+        types[i] = typeof jonas[i]
+      }
+      console.log(types)
+
+      const years = [1991, 1997, 1876, 1678, 2899]
+      const ages = []
+      for (let i = 0; i < years.length; i++) {
+        ages.push(2022 - years[i])
+      }
+      console.log(ages)
+
+      //continue and break
+      //-----only for string---------
+      console.log('------Strings---------')
+      for (let i = 0; i < jonas.length; i++) {
+        if (typeof jonas[i] !== 'string') continue
+        console.log(jonas[i], typeof jonas[i])
+        //output is:johns string ,mahale string, developerstring
+      }
+      console.log('------Numbers---------')
+      for (let i = 0; i < jonas.length; i++) {
+        if (typeof jonas[i] !== 'number') continue
+        console.log(jonas[i], typeof jonas[i]) // 29 number
+      }
+      console.log('------Numbers---------')
+      for (let i = 0; i < jonas.length; i++) {
+        if (typeof jonas[i] === 'number') break
+        console.log(jonas[i], typeof jonas[i]) // johns string ,mahale string
+      }
+      //
+      for (let i = jonas.length - 1; i >= 0; i--) {
+        console.log(i, jonas[i])
+      }
+
+      //Loop inside Loop
+      for (let exersize = 1; exersize < 4; exersize++) {
+        console.log(`------------start exersize----- ${exersize}
+        `)
+
+        for (let rep = 1; rep < 6; rep++) {
+          console.log(`Lifiting wt repetation ${rep}`)
+        }
+      }
+      /*
+      ------------start exersize----- 1
+        
+ Lifiting wt repetation 1
+ Lifiting wt repetation 2
+ Lifiting wt repetation 3
+ Lifiting wt repetation 4
+ Lifiting wt repetation 5
+ ------------start exersize----- 2
+        
+ Lifiting wt repetation 1
+ Lifiting wt repetation 2
+ Lifiting wt repetation 3
+ Lifiting wt repetation 4
+ Lifiting wt repetation 5
+ ------------start exersize----- 3
+        
+ Lifiting wt repetation 1
+ Lifiting wt repetation 2
+ Lifiting wt repetation 3
+ Lifiting wt repetation 4
+ Lifiting wt repetation 5
+      */
+    </script>
+  </body>
+</html>

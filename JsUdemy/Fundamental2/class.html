@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <script>
+      //indroduces in es6
+      //user defined data type ,one wrapper in which similar data types,functions we wrapped
+      class Fruits {
+        //let a=10   ->we canont defined varibles using let var const it is directly defined
+        a = 10
+        name = 'manu'
+        constructor() {
+          console.log('constructor') //o/p-'constructor' automaticlly call
+          //call it directly
+          console.log(this.name) //manu
+
+          //to make function no need to write function keyword
+        }
+        getfruit() {
+          // console.log('Function')
+          return 'apple'
+        }
+      }
+      //to call class
+      let f1 = new Fruits()
+      //to call function
+      //f1.getfruit() //function
+      console.log(f1.getfruit()) //apple
+
+      //inheritance
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function expression
+      const calAge = function (birthYear) {
+        return 2022 - birthYear
+      }
+      //arrow function
+      const calAge2 = (birthYear) => 2022 - birthYear
+      console.log('Current age is:' + calAge2(1993))
+      const age = calAge2(1991)
+      console.log(age)
+
+      const retirement = (birthYear) => {
+        const age = 2022 - birthYear
+        const ageRetirement = 65 - age
+        return ageRetirement
+      }
+      console.log(retirement(1993))
+      //using parameters
+      const yearRetirement = (birthYear, firstName) => {
+        const age1 = 2022 - birthYear
+        const retire = 65 - age1
+        // return ageRetirement
+        return `${firstName} retires in ${retire} years`
+      }
+      console.log(yearRetirement(1993, 'Manisha'))
+      console.log(yearRetirement(1991, 'Vaibhav'))
+    </script>
+  </body>
+</html>

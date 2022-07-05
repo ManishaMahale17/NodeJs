@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function f(a, b, c) {
+        return a + b + c
+      }
+      console.log(f()) //NaN
+      console.log(f(2, 3, 4)) //9
+      function someVal() {
+        return 'last'
+      }
+      function add(a, b = 'middle', c = someVal()) {
+        return a + b + c
+      }
+      console.log(add('frist')) //fristmiddlelast
+      function main(a, b = main()) {
+        return a + b
+      }
+      main() //Uncauthch range error:maximum callstack are extended
+     */
+      let data = [2, 4, 8, 9, 60, 40, 30]
+      /*let result = data.find((item) => {
+        // item < 9  //op:2
+         item <= 9 //op:2
+      })
+      console.log(result) //2: its find ist match so we gget only one o/p
+     */
+      //using findIndex
+      let result = data.findIndex((item) => {
+        // item < 9 //0 bcz 2 index is 0
+        item > 30 //4 bcz 60
+      })
+      console.log(result)
+      console.log()
+
+      let obdata = [{ id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }, { id: 14 }]
+      function cust(item) {
+        return item.id > 12
+      }
+      let res = obdata.find(cust)
+      console.log(res) //id=13
+    </script>
+  </body>
+</html>

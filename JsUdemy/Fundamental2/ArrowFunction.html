@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      const myFunction = (a, b) => a * b
+      const a = myFunction(4, 5)
+      console.log(a) //20
+
+      const x = '23'
+      if (x === 3) console.log('hi')
+      let item = {
+        name: 'Vaibhav',
+        getName: function () {
+          console.log('normal', this)
+        },
+        getNameArrow: () => {
+          console.log('arrow', this)
+        },
+      }
+      item.getName() //normal {name: 'Vaibhav', getName: ƒ, getNameArrow: ƒ}
+      item.getNameArrow() //arrow Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+      //bcz in arrow function this refers to parent
+    </script>
+  </body>
+</html>

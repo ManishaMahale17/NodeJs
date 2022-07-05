@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>const</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      const nu = 12
+      console.log(nu) //
+      //nu = 13
+      //console.log(nu)//Uncaught TypeError: Assignment to constant variable.
+      console.log('---------------------')
+      const x = 1
+      {
+        const x = 19
+        console.log(x) //19
+      }
+      console.log(x) //1
+      console.log('---------------------')
+
+      /*{ 
+        //redeclartion not allowed
+        const x1 = 199
+        const x1 = 19
+        console.log(x1)//Identifier 'x1' has already been declare
+      }*/
+      console.log('---------------------') //assignment const variable error
+
+      /*for (const x3 = 1; x3 <= 10; x3++) {
+        console.log(x3)
+      }
+      */ console.log(
+        '---------------------',
+      )
+      const number = 42
+
+      try {
+        number = 99
+      } catch (err) {
+        console.log(err)
+        // expected output: TypeError: invalid assignment to const `number'
+        // Note - error messages will vary depending on browser
+      }
+
+      console.log(number)
+      // expected output: 42
+      console.log('---------------------')
+      const car = { type: 'Fiat', model: '500', color: 'white' }
+
+      // Change a property:
+      car.color = 'red'
+
+      // Add a property:
+      car.owner = 'Johnson'
+
+      // Display the property:
+      /* document.getElementById('demo').innerHTML = 'Car owner is ' + car.owner
+      carName = 'Volvo'
+      document.getElementById('demo').innerHTML = carName
+      var carName
+      //
+      */
+      /*console.log('---------------------')
+      console.log(carNamee)
+      carNamee = 'Audi'
+      let carNamee
+      */
+      console.log('---------------------')
+      const xc = 2
+      {
+        const xc = 4
+        console.log(xc) //4
+      }
+      console.log(xc) //2
+      console.log('---------------------')
+
+      for (let x2 = 1; x2 <= 10; x2++) {
+        //var x2 = 66 x2 already declared
+        console.log(x2) //1 to 10
+      }
+      console.log(x2) //x2 is not defined
+    </script>
+  </body>
+</html>

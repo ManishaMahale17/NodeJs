@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict </title>
+</head>
+
+<body>
+    <script>
+        /*
+       //Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+       Strict mode makes it easier to write "secure" JavaScript.
+       Strict mode changes previously accepted "bad syntax" into real errors.
+      ///make a code bug free 
+       */
+
+        //"use strict";
+        // x=3.14;
+        //console.log(x);
+
+        //without using strict mode output is 3.14
+        //when we use strict mode show an error ie x is not defined
+         
+        //"use strict";
+        //function myFunction() {
+          //  y = 3.14;
+          //  console.log(y);
+        //}
+       // myFunction();//y is not defined
+
+   /*Declared inside a function, it has local scope (only the code inside the function is in strict mode):*/
+    function myFun(){
+        "use strict"; 
+      x=3.144;
+    }
+    myFun();
+    console.log(x);//error
+    //Using an object without declaring it, is not allowed.
+    //Using variable without declaring it, is not allowed.
+    //Deleting a function is not allowed.ie"use strict";function x(p1, p2) {}; delete x;    
+   //Duplicating a parameter name is not allowed.
+   //Octal numeric literals are not allowed: let x=010
+   //Octal escape characters are not allowed:let x = "\010"; 
+   //Writing to a read-only property is not allowed:const obj = {};Object.defineProperty(obj, "x", {value:0, writable:false});obj.x = 3.14;
+   //Writing to a get-only property is not allowed:const obj = {get x() {return 0} };obj.x = 3.14;
+   //Deleting an undeletable property is not allowed:
+   //The word eval cannot be used as a variable:
+   //The word arguments cannot be used as a variable:
+   //The with statement is not allowed:
+   //implements
+//keywords not use ->interface, let ,package, private, protected, public, static ,yield 
+   </script>
+</body>
+
+</html>

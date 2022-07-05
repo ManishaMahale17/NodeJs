@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generators</title>
+  </head>
+  <body>
+    <h1>Generators</h1>
+    <button onclick="getStep()">Go step by step</button>
+    <script>
+      //generators basically a function used to pause and resume eg(moive we pause n resume)
+      //yeild use to step by step execution
+      //The yield keyword is used to pause and resume a generator function.
+      //The function* declaration (function keyword followed by an asterisk) defines a generator function, which returns a Generator object.
+      function* steps() {
+        let a = 10
+        let b = 20
+        console.log(10 + 20)
+        yield 'step 1 completed'
+        console.log(10 - 20)
+        yield 'step 2 completed'
+        console.log(10 * 20)
+        yield 'step 3 completed'
+        return 'all steps done'
+      }
+      let stp = steps()
+      function getStep() {
+        console.log(stp.next())
+      }
+      /*
+      30
+generators.html:29 {value: 'step 1 completed', done: false}
+generators.html:21 -10
+generators.html:29 {value: 'step 2 completed', done: false}
+generators.html:23 200
+generators.html:29 {value: 'step 3 completed', done: false}
+generators.html:29 {value: 'all steps done', done: true}
+    after click on button not necessary
+     {value: undefined, done: true}
+generators.html:29 {value: undefined, done: true}
+generators.html:29 {value: undefined, done: true} 
+*/
+
+      function* idMaker() {
+        let index = 0
+        while (true) yield index++
+      }
+      let gen = idMaker()
+      console.log(gen.next()) //0
+      console.log(gen.next()) //1
+      console.log(gen.next()) //2
+      console.log(gen.next()) //3
+
+      function* logGen() {
+        console.log(0)
+        console.log(1, yield)
+        console.log(2, yield)
+        console.log(3, yield)
+      }
+      let gene = logGen()
+      gene.next()
+      gene.next('manu')
+      gene.next('Vaibhav')
+      gene.next('Tambe')
+      //manu
+      //vaibhav
+      //Tambe
+    </script>
+  </body>
+</html>

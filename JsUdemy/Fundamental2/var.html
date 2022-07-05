@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log('-----------var-------------')
+      var x = 10
+      {
+        var x = 12
+        console.log(x) //12
+      }
+      console.log(x) //12
+      var x1 = 12
+      {
+        var x1 = 13
+        var x1 = 144
+        console.log(x1) //144
+      }
+      console.log(x1) //144
+      var x2
+      {
+        var x2 = 12
+      }
+      console.log(x2)
+      var xx = 1
+      if (xx === 1) {
+        var xx = 18
+        console.log(xx) //18
+      }
+      console.log(xx) //18
+
+      var x = 10
+      function f() {
+        var x = (y = 1)
+        console.log(x, y) //1 1
+      }
+      f()
+      console.log(x, y) //10 1
+      //use strict=>error y is not defined
+      var x = 10
+      function f1() {
+        var x = (y = 1)
+        console.log(x, y)
+      }
+      f1()
+      console.log(x, y) //
+
+      console.log('---------------------')
+
+      for (var x2 = 1; x2 < 10; x2++) {
+        console.log(x2) //1 to 9
+      }
+      console.log(x2) //10
+
+      console.log('---------------------')
+    </script>
+  </body>
+</html>

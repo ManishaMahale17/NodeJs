@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Op</title>
+  </head>
+  <body>
+    <script>
+      //rest operator:baki ki bachi hui cheeze
+      //ekdhya function madhe aplyla mahit nasel kiti parameter yenar ahet kiti yetil tevha rest op use karych to jevdhe parameter ahe na tyacha array banun dein
+      function fruits(a, b) {
+        console.log('fruits', a, b)
+      }
+      fruits = ['apple', 'orange'] //fruits apple orange
+      //we have two parameter but we pass more arguments then we get output //fruits apple orange only for a,b to solve this we use rest opesrtor
+      // fruits('apple', 'orange', 'mango', 'banana') ////fruits apple orange
+      //suppose people example same as above using rest op
+      //parameter get karto tevha use hoil
+      function people(...a) {
+        console.log('People', a)
+      }
+      people = ['mm', 'mv', 'mx', 'mmm', 'mmmm'] //People (5) ['mm', 'mv', 'mx', 'mmm', 'mmmm']
+      function peopl(a, ...z) {
+        //here use rest
+        console.log('People', z)
+      }
+      peopl = ['mm', 'mv', 'mx', 'mmm', 'mmmm'] //People (4) ['mv', 'mx', 'mmm', 'mmmm']
+      //rest parameter must me last parameter
+      // function peopl(a, ...z,x) {//cannot do this
+      //in rest op we can pass function:  peopl('mm', 'mv', 'mx', 'mmm', 'mmmm',test())
+
+      // Spread operator
+      //parameter pass karto tevha use hoil
+      let pl = ['nn', 'll', 'kk']
+      let emp = ['manu', 'vv', 'sm']
+      function f(a, b, c) {
+        console.log(a, b, c)
+      }
+      f(...emp) //manu vv sm//here use spred
+      //spread op use to merge two array,
+      let allArray = [...pl, ...emp]
+      let allArrayy = [...pl, ...emp, ...fruits, ...peopl, ...people]
+      console.log(allArray) //(6) ['nn', 'll', 'kk', 'manu', 'vv', 'sm']
+      console.log(allArrayy) //['nn', 'll', 'kk', 'manu', 'vv', 'sm', 'apple', 'orange', 'mm', 'mv', 'mx', 'mmm', 'mmmm', 'mm', 'mv', 'mx', 'mmm', 'mmmm']
+    </script>
+  </body>
+</html>
