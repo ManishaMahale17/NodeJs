@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const friends = ['Vaibhav', 'Manu', 'Sweety', 'Sangam']
+      console.log(friends)
+      //another way
+      const years = new Array(1991, 1984, 2000, 2098)
+      console.log(years)
+      //
+      console.log(friends[0]) //1991
+      console.log(friends[1]) //1984
+      console.log(years[0]) //1991
+      console.log(years.length) //4
+      console.log(friends[friends.length - 2]) //Sweety
+      //inside the square bracket we can put any expression
+
+      //change the array
+      friends[2] = 'Jay'
+      console.log(friends)
+      //not allowed to change full array
+      //friends = ['Bob', 'Alice']
+      //console.log(friends)
+
+      const firstName = 'Jonas'
+      const jonas = [firstName, 'Mahale', 2022 - 1993, friends]
+      console.log(jonas) // ['Jonas', 'Mahale', 29, Array(4)]
+      //Array(4) ['Vaibhav', 'Manu', 'Jay', 'Sangam']
+
+      //
+      const calAge = function (birthYear) {
+        return 2037 - birthYear
+      }
+      const year = [1990, 1999, 1456, 7890]
+      console.log(calAge(years)) //NaN
+
+      //opeartions on array
+      const fruits = ['banana', 'apple', 'pineapple']
+      fruits.push('mango') //returns a value
+
+      console.log(fruits) //['banana', 'apple', 'pineapple','mango']
+      fruits.unshift('Peru') //['peru','banana', 'apple', 'pineapple','mango']
+      console.log(fruits)
+
+      //remove element
+      fruits.pop()
+      console.log(fruits) // //['peru','banana', 'apple', 'pineapple']
+      //to know position
+      console.log(fruits.indexOf('apple')) //2
+      console.log(fruits.indexOf('Mogara')) //-1 element is not present in array
+      console.log(fruits.includes('banana')) //true-it checks sytrict equalty
+      fruits.push(23)
+      console.log(fruits.includes(23)) //true
+      console.log(fruits.includes('23')) //false bcz it compares exctle correct datatypes
+      //example
+      if (fruits.includes('apple')) {
+        console.log('Apple is present')
+      } else {
+        console.log('Apple is not present')
+      }
+    </script>
+  </body>
+</html>
