@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LETVARCONST</title>
+  </head>
+  <body>
+    <script>
+      //using var
+      let mAge = 29
+      console.log(mAge) //29
+      mAge = 30
+      console.log(mAge) //30
+      var bYear
+      console.log(bYear) //undined
+
+      // using let
+      let age = 29
+      console.log(age) //29
+      age = 30
+      console.log(age) //30
+      let birthYear
+      console.log(birthYear) //undinrd
+
+      //without declaring variable
+      mAgee = 29
+      console.log(mAgee) //29
+
+      //using const
+      const myAge = 29
+      console.log(myAge) //29
+      myAge = 31
+      console.log(myAge) //typeerror
+      //const bithYear; //need to initiallaizion
+    </script>
+  </body>
+</html>

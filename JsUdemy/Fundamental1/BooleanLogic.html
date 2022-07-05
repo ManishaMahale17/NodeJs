@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Logic</title>
+</head>
+
+<body>
+    <script>
+        //zBoolean logic-true and false alues: and or not opeartor
+
+        const hasdrivinglience = true;
+        const hasgoodvision = false;
+        console.log(hasdrivinglience && hasgoodvision);//false
+        console.log(hasdrivinglience || hasgoodvision);//true
+        console.log(!hasdrivinglience);//false
+        console.log(!hasgoodvision);//true
+
+
+
+        // and operation             OR
+        /* 
+         T      F                 T    F
+T        T      F          T      T    T
+F        F      F          F      T    F
+
+        */
+        const isDrive = true;
+        console.log(hasdrivinglience && hasgoodvision && isDrive);//false
+        console.log(hasdrivinglience || hasgoodvision || isDrive);//true
+        console.log(hasdrivinglience || hasgoodvision && isDrive);//true
+        console.log(hasdrivinglience && hasgoodvision || isDrive);//true
+    </script>
+</body>
+
+</html>

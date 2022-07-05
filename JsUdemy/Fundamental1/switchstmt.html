@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+  </head>
+  <body>
+    <script>
+      const day = 'monday'
+
+      switch (day) {
+        case 'monday':
+          console.log('Today is monday')
+          break
+        //without break it contineously executing
+        case 'tuesday':
+          console.log('Today is thueday')
+          break
+        case 'wendesday':
+          console.log('Today is wenesday')
+          break
+        case 'thursday':
+          console.log('Today is thrusday')
+          break
+        case 'friday':
+          console.log('Today is friday')
+          break
+        case 'saturday':
+          console.log('Today is satuday')
+          break
+        default:
+          console.log('Not a valid day')
+      }
+
+      if (day === 'monday') {
+        console.log('monday')
+      } else if (day === 'thuesday') {
+        console.log('thuesday')
+      } else if (day === 'wednesday') {
+        console.log('wednesday')
+      } else if (day === 'Thursday') {
+        console.log('Thursday')
+      } else if (day === ' friday') {
+        console.log('friday')
+      } else if (day === 'saturday') {
+        console.log('saturday')
+      } else {
+        console.log('not valid day')
+      }
+
+      //ternary opeartor
+      const age = 8
+      age >= 18 ? console.log('adult') : console.log('child')
+
+      const year = 3022
+      year <= 2022 ? console.log('leap') : console.log('not laeap')
+    </script>
+  </body>
+</html>

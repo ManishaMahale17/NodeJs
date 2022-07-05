@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //type conversion
+       //manually convert one type to another
+   const year="1991";
+   //console.log("My year is"+year+18);
+   //1991 is consider a string so to avoid this use type conversion
+
+   console.log(Number(year),year);//1991 '1991'
+   //beacusae of const original value not change it is still string
+    console.log(year+18);//uncatch referance error number si not defined
+   
+    //using let
+    let years = "1991";
+    
+   
+   console.log(Number(years),years); //1991 '1991'
+    console.log(years+18);//199118
+
+     //using var
+     let yearss="1991";
+   
+    console.log(Number(yearss),yearss);//1991 '1991' 
+    console.log(yearss+18);//199118
+
+    ///❤❤let var const=> string value ramains same not be change
+    //we can use
+    console.log(Number(year)+18);//2009
+    console.log(Number(years)+18);//2009
+    console.log(Number(years)+18);//2009
+    console.log(Boolean(year)+18);//19
+    //console.log(string(year)+18);//error string not defined
+    console.log(Number("manu")+18);//NaN not a number
+    console.log(typeof NaN);//number
+    console.log(String(8));//8
+ //👍👍 on console output> black color:string,blue:number
+     console.log(String(8),8);//8(string) number()
+     console.log(String(8),"Manu");//8 manu
+
+
+     //type coercion
+     console.log("I am " + 29 + "years old");
+     console.log("I am " + '29'+ "years old");
+     console.log("12 "+ "2" + 2); //12 22
+     console.log(12 + 2 + "2"); //142
+     console.log(12 +  "2"+ "2"); //1222
+     console.log(12 +  "2"+ 2);//1222
+     console.log("12" + "2" + "2"); //1222 +string contacte
+     console.log("12" * "2"); //24// math operation
+     console.log("12" / "2"); //6
+
+     let n= "1" + 1; //output is '11'
+     n = n - 1; //11-1=10
+     console.log( n );//10
+     console.log(n++);//10
+     console.log(n);//11 
+
+     ///Fualty values in js
+     //5 faulty values: 0,'',undefined,NaN, null thse values becomes false when we converted to it
+     console.log(Boolean(0)); //false
+     console.log(Boolean('')); //false(empty string)
+     console.log(Boolean(' ')); //true
+     console.log(Boolean(null)); //false
+     //console.log(Boolean(Nan));//error nan is not defined
+     console.log(Boolean(undefined));//false
+     console.log(Boolean ({}));//true
+     
+     //
+     const money=0;//output is false but use if else then
+     if (money){//false
+         console.log(" got job");
+     }else{//true
+         console.log("jobless");
+     }
+     // output is jobless
+     //using typoe conversion it convetr ito boolean so 
+     //money value is 0 it is false so if block not exected and else block executed
+     console.log(money);//0
+
+     
+
+     ///
+     const moneyy=1000;//value is 1000
+     if (moneyy){//true
+         console.log(" got job");
+     }else{//false
+         console.log("jobless");
+     }
+     //output is got job
+
+     const mony='';//value is ''
+     if (mony){//false
+         console.log(" got job");
+     }else{//true
+         console.log("jobless");
+     }
+     //output is jobless
+
+     const mo=' ';//value is ' '
+     if (mo){//true
+         console.log(" got job");
+     }else{//false
+         console.log("jobless");
+     }
+     //output is got job
+
+     let my;//value is undefined
+     if (my){//false
+         console.log(" got job");
+     }else{//true
+         console.log("jobless");
+     }
+     //output is jobless
+
+     const m={"m":"fname","l":"lname"};//value is object
+     if (m){//true
+         console.log(" got job");
+     }else{//false
+         console.log("jobless");
+     }
+     //output is got job
+
+     let moey=0;//output is false but use if else then
+     if (moey){//false
+         console.log(" got job");
+     }else{//true
+         console.log("jobless");
+     }
+     //output is jobless
+
+
+
+   </script> 
+</body>
+</html>
