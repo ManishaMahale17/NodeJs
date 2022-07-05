@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental</title>
+   
+  
+</head>
+<body>
+    <h1>Javascript Fundamental</h1>
+    <p id="demo"></p>
+    <script>
+        
+         
+
+        let country ='India';
+        let continent ="Asia"; 
+         let population ='100 crore'; 
+         console.log(" I live in" +" " + country);
+         console.log("My continent is" +" " +continent);
+         console.log("Population in India is" +" "+ population);
+         document.getElementById("demo").innerHTML
+          = "I live in "+country +"  "+
+         "My continent is" +" " +continent+ "  "+
+         "Population in India is" +" "+ population;
+         let _fName="Manu";
+         let city;
+         let count="";
+         let js=true;
+         console.log(typeof 23);//number
+         console.log(typeof 'Joo');//string
+         console.log(typeof 34.3);//number
+         console.log(typeof _fName);//string
+         console.log(typeof $);//undifined
+         console.log(typeof city);//undifined
+         console.log(typeof 340000000000000000000);//number
+         console.log(typeof count);//string
+         console.log(typeof js);//bollean
+         console.log(typeof true);//boolean
+         console.log(typeof 'Manu');//string
+         console.log(typeof Jonh );//undined
+         //Dyanmic variable typing data type determined dyanamicallay
+         let lastName=true;
+         console.log(typeof lastName);//boolean
+         lastName='Mahale';
+        
+         console.log(typeof lastName);//string
+
+         //undifined
+         let ms;
+         console.log(ms);//undined
+         console.log(typeof ms);//undined
+         
+         ms=1999;
+         console.log(ms);//undined
+         console.log(typeof ms);//number
+         
+         //null
+         console.log(typeof null);//object ->it is bug
+
+   </script>
+</body>
+</html>
