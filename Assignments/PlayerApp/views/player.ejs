@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player Details</title>
+</head>
+<body>
+  <h1>Player Details</h1>
+  <img src="/images/<%= player.image %>" alt="<%= player.name %>">
+  <h2><%= player.name %></h2>
+  <!-- Add other player details as needed -->
+  <a href="/players">Next Player</a>
+  <a href="/players/<%= pageNumber + 1 %>">Next Player</a>
+</body>
+</html>
