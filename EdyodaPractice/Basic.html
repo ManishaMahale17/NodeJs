@@ -1,0 +1,196 @@
+Backend Developement:
+<!-- Back-end development means working on server-side software, which focuses on everything you can't see on a website.
+ Back-end developers ensure the website performs correctly, focusing on databases, back-end logic, application programming interface (APIs), architecture, and servers. -->
+
+ Web Server:
+ <!-- request and response process.
+    software and hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web -->
+Introduction:What is Node.js?
+<!-- 
+    It is javascript runtime environment.
+Node.js is an open source server environment.
+Node.js allows you to run JavaScript on the server.
+Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+Node.js uses JavaScript on the server
+web server languages(not a lang or framework.)
+
+-->
+What is NPM?
+<!-- 
+    installing packeages ,all packages stored in node modules and all dependencies stored in package.json file.
+    npm scripts can be created to run certain task such as to run server.
+    NPM is a package manager for Node.js packages, or modules if you like.
+
+www.npmjs.com hosts thousands of free packages to download and use.
+
+The NPM program is installed on your computer when you install Node.js -->
+
+Module and Module Types
+What is a Module in Node.js?
+<!-- 
+ Node modules provide a way to re-use code in your Node application.
+Consider modules to be the same as JavaScript libraries.
+
+A set of functions you want to include in your application
+Use the exports keyword to make properties and methods available outside the module file.
+Three Types:
+1.Built-in modules
+2.Local modules
+3.Third-party modules
+-->
+1.Built-in Modules(core module)
+<!-- 
+Node.js comes with some modules out of the box. These modules are available for use when you install Node.js. Some common examples of built-in Node modules are the following:
+
+http
+url
+path
+fs
+os 
+
+eg.
+const http = require('http') 
+
+server = http.createServer((req, res) => { 
+    res.writeHead(200, {'Content-Type': 'text/plain'}) 
+    res.end('Hello World!')
+})
+
+server.listen(3000)
+-->
+
+2.Local Modules(custom module)
+<!-- 
+When you work with Node.js, you create local modules that you load and use in your program. Let's see how to do that.
+
+Create a simple sayHello module. It takes a userName as a parameter and prints "hello" and the user's name.
+
+function sayHello(userName) {
+	console.log(`Hello ${userName}!`)
+}
+
+module.exports = sayHello 
+
+
+How to load your local modules:
+const sayHello = require('./sayHello')
+sayHello("Maria")
+-->
+
+Third-Party Modules
+<!-- 
+A cool thing about using modules in Node.js is that you can share them with others. The Node Package Manager (NPM) makes that possible. When you install Node.js, NPM comes along with it.
+
+With NPM, you can share your modules as packages via the NPM registry. And you can also use packages others have shared.
+1. first need to install it
+         npm install <name-of-package>
+2.you need to load it with the require function
+       const <name-of-package> = require('<name-of-package>')
+3.you can use it in your code
+const <name-of-package>  = require('<name-of-package> ')
+console.log(<name-of-package> ("hello")) 
+
+-->
+
+Node.js File System Module:
+<!-- The Node.js file system module allows you to work with the file system on your computer.
+To include the File System module, use the require() method:
+
+var fs = require('fs');
+
+Common use for the File System module:
+
+Read files
+Create files
+Update files
+Delete files
+Rename files
+
+-->
+
+UTF:provides encoding to read files.
+1.Write File
+<!-- 
+var fs = require('fs');
+fs.writeFile('mynewfile.txt', 'Hello', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+}); 
+-->
+2.Read Files
+<!-- 
+The fs.readFile() method is used to read files on your computer. 
+
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile('demofile1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080);
+
+-->
+JavaScript Callbacks
+
+<!-- 
+A callback is a function passed as an argument to another function. Using a callback, you could call the calculator function  -->
+
+Non-blocking function:
+<!-- Non-blocking calls are the calls that do not block the execution of other operations. In non-blocking operations, a single process is allowed to serve multiple requests simultaneously. Instead of waiting for completion, functions are delegated to the system to execute the next piece of code. -->
+
+What is asynchronous file?
+<!-- Asynchronous data transfer is a type of data transfer where the data is transferred from one device to another without requiring the two devices to be synchronized with each other. -->
+
+I/O operations:
+<!-- I/O operations provides a single point of control for managing connectivity in your active I/O configurations. It takes an active role in detecting unusual I/O conditions and lets you view and change paths between a processor and an input/output device, which can involve using dynamic switching. -->
+
+What is an event loop in JavaScript ?
+<!-- JavaScript is a single-threaded asynchronous programming language. But what does it mean? What is this event loop in JavaScript that we all keep talking about? 
+
+What does it mean when we say JavaScript is single-threaded?
+
+It means that the main thread where JavaScript code is run, runs in one line at a time manner and there is no possibility of running code in parallel.-->
+
+ Event loop: 
+ <!-- An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty. 
+The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded. The below illusion demonstrates the functioning of the event loop-->
+___________________________________________________________________________________
+synchronus:
+<!-- task perform one at a time. 
+eg: user->products -> cities
+eg.php
+-->
+
+Asynchronous:
+<!-- in this 2nd task dont wait to finish 1st task. 
+user
+ products
+  cities
+  eg.node,javascript
+
+  let a=10;
+  let b=0;
+  setTimeout(()=>{
+    b=20;
+  },2000);
+  console.log(a+b);
+  //output: 10 bcz it dont wait 2sec and directly print the output.value of a is 10. this is drawback of asynhrous programming.
+-->
+handle asynchrous using promises:
+<!-- 
+  let a=10;
+  let b=0;
+  let waitingData=new Promise((resolve, reject) =>{
+setTimeout(()=>{
+    resolve(20);
+  },2000);
+  })
+  
+  waitData.then((data)=>{
+    b=data;
+  console.log(a+b); 
+  })
+//output:30(10+20)//it waits 2 sec and promises si resolves and give us output
+-->

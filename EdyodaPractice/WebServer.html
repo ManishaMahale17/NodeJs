@@ -1,0 +1,28 @@
+Web server:
+ <!--
+    It is a computer where the web content is stored. 
+    Basically web server is used to host the web sites but there exists other web servers also such as gaming, storage, FTP, email etc.
+ -->
+ Handling HTTP requests:
+ <!-- The Built-in HTTP Module
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+To include the HTTP module, use the require() method:
+
+var http = require('http'); 
+
+The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+Use the createServer() method to create an HTTP server:
+
+ExampleGet your own Node.js Server
+var http = require('http');
+
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8080); //the server object listens on port 8080
+-->
+nodemon
+<!-- nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. -->

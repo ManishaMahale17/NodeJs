@@ -1,0 +1,170 @@
+Installation:
+<!-- 
+mongodb capmass
+
+
+ -->
+ MongoDB:
+ <!-- 
+nosql dataabase.
+the data stored in acollections(tables)
+collection dont have rows and columns it have objects.
+data store inb form of objects.
+
+{
+    "id": "gggsgsg8",
+    "name": "manu",
+    "description":quality enginner
+},
+{
+    "id": "gggsgsg9",
+    "name": "manuV",
+    "description":quality enginner
+}
+data is unstructred less or more it apply on mongoDb.mysql require same table for designing table.
+-----------------
+mongoose capmasss:GUI of mongoDb.
+
+
+  -->
+  <!-- Create Db: -->
+-->create dataabase
+show dbs
+use database_name;
+db.createCollection('fristName');
+show collections
+_________________________________________
+eg
+show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+<!-- (craete database name :Edyoda and collection Name:'name') -->
+show dbs
+Edyoda   8.00 KiB
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+use Edyoda
+switched to db Edyoda
+db.createCollection('name')
+MongoServerError: Collection Edyoda.name already exists.
+db.createCollection('city')
+{ ok: 1 }
+show collections
+city
+name
+____________________________________________________
+<!-- Drop collection -->
+db.city.drop();
+    |
+    collectionName
+_________________________________________
+<!-- Drop Db -->
+db.dropDatabase();
+____________________________________________________
+<!-- Create Db:
+Insert data: -->
+use Edyoda
+db.name.insertOne({lName:'Manu',lName:'Tambe'})
+<!-- {
+    acknowledged: true,
+    insertedId: ObjectId("64c0e807cdb765e4bba3bce5")
+  } -->
+  db.name.find();
+  _________________________________________
+  <!-- update: -->
+  db.name.updateOne({old},{modifiesd})
+  <!-- __________________________________________________connect node with mongoDB: -->
+npm i mongodb
+
+const {MongoClient} = require('mongodb');
+<!-- MongoClient receive from mo godb-->
+const url='mongodb://localhost:27017';
+<!-- it gives path which is default.local path  -->
+const database='Edyoda';
+<!-- common db name  -->
+const client=new MongoClient(url);
+<!-- nodejs is a client and mongodb is server. fetch data from mongodb. -->
+async function getData(){
+    let result= await client.connect();
+    <!-- it returns promises so to handle use asnyc and await -->
+    let db=result.db(database);
+    let collection=db.collection('products');
+ 
+    let response=await collection.find({}).toArray();
+    <!-- data in structure format:toArray(); -->
+    console.log(response);
+}
+getData();
+_________________________________________
+<!-- API with MongoDb-->
+-get push put delete.
+body parser used before v4.6 express version.now this not used
+
+-----------------------------------
+<!-- Moongoos: -->
+fields control,advnced to mondodb.
+apply validation on data.
+restrtion on numers .strings
+<!-- 
+package install: -->
+npm i mongoose 
+<!-- schemma: -->
+validtate db fields,db feilds
+<!-- models: -->
+using schemmas it connect mongodb to node js
+__________________________________
+const mongoose = require('mongoose');
+
+// const main=async ()=>{
+//     await mongoose.connect("mongodb://localhost:27017/Edyoda");
+//     const ProductSchema=new mongoose.Schema({
+//         name:String
+//     });
+//     const ProductsModel=mongoose.model("products",ProductSchema);
+//     let data=new ProductsModel({name:"m8"});
+//     let result =await data.save();
+//     console.log(result);
+
+// }
+// main();
+_________________________________________
+<!-- File upload using multer: -->
+const express=require('express');
+const multer=require('multer');
+const app= express();
+
+app.post("/upload",(req,res)=>{
+ res.send("file upload")
+});
+app.listen(5000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

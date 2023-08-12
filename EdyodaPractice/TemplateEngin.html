@@ -1,0 +1,23 @@
+Template Engine:
+<!-- use to create a dynamic pages(db realted pages)
+    --Template engines are used when you want to rapidly build web applications that are split into different components.
+ejs:one of most popular type of template engines.make to use dynamic website.
+
+
+index.js
+app.set('view engine', 'ejs');
+
+app.get('/profile',(req, res)=>{
+    const user={
+        name: 'John',
+        email: 'john@example.com,
+        city: 'Delhi'
+        }
+    res.render('profile',{user});
+})
+
+make views folder .
+profile.ejs
+<h1>Profile welcome<%= user.name%></h1>
+<h3>Email:<%=user.email%>
+-->

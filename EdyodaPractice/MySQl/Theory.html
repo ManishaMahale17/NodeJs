@@ -1,0 +1,37 @@
+<!-- npm i mysql -->
+<!-- config.js -->
+<!-- // make config file mysql database(reuseful,less time ) -->
+const mysql= require('mysql');
+const conn=mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'edyoda'
+});
+conn.connect((err)=>{
+    if(err)
+    {
+        console.log('Error');
+    }
+   else
+   {
+    console.log('Connect');
+   }
+})
+module.exports =conn;
+
+<!-- To get data from database -->
+conn.query('SELECT * FROM persons',(err,result)=>{
+    console.log('result',result);
+})
+
+
+<!-- get API with mysql -->
+const express=require('express');
+const conn=require('./config');
+const app= express();
+
+app.get("/",(req,res)=>{
+    res.send('Route Done');
+})
+app.listen(5001)

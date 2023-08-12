@@ -1,0 +1,59 @@
+API:
+<!--
+ Application programming interfaces
+Need of API:
+-user(client) is talk to the server using the API. 
+-two software components to communicate with each other using a set of definitions and protocols.
+
+-->
+What is a REST API?
+<!-- A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style. 
+Why is REST API used?
+One of the key advantages of REST APIs is that they provide a great deal of flexibility. Data is not tied to resources or methods, so REST can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
+-->
+controller:
+<!-- all logic here in this folder 
+signup:frist check user present or not 
+-->
+Model:
+user.model.js
+<!-- all schema(db struture) here in this folder 
+const mongoose = require('mongoose');
+const user=mongoose.model('user',mongoose.Schema{
+    name:{
+        type: String,
+        required: true,
+    },
+     email:{
+        type: String,
+        required: true,
+    },
+     username:{
+        type: String,
+        required: true,
+    },
+     password:{
+        type: String,
+        required: true,
+    },
+},
+{timestamps:true}
+});
+
+
+-->
+routes:
+user.route.js
+<!-- all routes here in this folder.
+controller imorted here
+e.
+const userController =require(./userController)
+router.post('./signup', userController,signup)
+router.post('./login', userController,login)
+module.exports = router;
+
+-->
+middleware:
+<!-- middleware is a function we generally runs request and response.
+decode token  -->
+

@@ -1,0 +1,73 @@
+What is middleware and examples?
+<!-- 
+    ---modified request and response.(changes)
+    add additional functinality and processing web application.
+    acts as a bridge between incoming request and outbound response
+    Middleware is software that lies between an operating system and the applications running on it. Essentially functioning as hidden translation layer, middleware enables communication and data management for distributed applications. 
+--_______________________________________
+appliaction level middleware:
+
+const express=require('express');
+const app=express();
+
+const reqFilter=(req,res,next)=>{
+    console.log('reqFilter')
+     
+}
+app.use(reqFilter)
+app.get('',(req,res)=>{
+res.send('Welcome home page')
+})
+________________________________________
+Types of middleware:
+<!-- appliaction level middleware
+Router level middleware
+Error handling middleware
+Built-in middleware
+third party middleware -->
+________________________________________
+Route level middleware:
+<!-- 
+works on single ,multiple routes .,group of route or all routes apply.
+1.signle level middleware:
+app.get('',reqFilter,(req, res) =>{
+    res.send("welcome)"
+})
+-----apply middleware on multiple pages
+
+const route=express.route();
+
+route.get('/about',(req, res) =>{
+    res.send("About page")
+})
+route.get('/contact',(req, res) =>{
+    res.send("Contact page")
+})
+
+app.use('/',route);
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

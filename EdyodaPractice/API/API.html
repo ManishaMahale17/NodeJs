@@ -1,0 +1,36 @@
+Microservices and RestAPI:
+<!-- --API:endpoints
+APIs are mechanisms that enable two software components to communicate with each other using a set of definitions and protocols 
+ For example, the weather bureau’s software system contains daily weather data. The weather app on your phone “talks” to this system via APIs and shows you daily weather updates on your phone.
+eg-Resoiurant , me-frontend    waiter-api     kichen-backend
+-->
+json.stringify():convers js objects to json.
+real time service:cahtting stytem
+curd app:
+_____________________________________________________________________
+Execution stack==call stack it is data structure where program currently.
+___________________________________________________________________________________
+index.js
+<!--
+ const http= require('http');
+const data = require('./data');
+http.createServer((req,resp)=>{
+resp.writeHead(500,{'Content-Type':'application\json'});
+resp.write(JSON.stringify(data));
+resp.end();
+}).listen(5001);
+ -->
+ data.js
+
+ <!-- 
+    const data=[
+    {name:'Manu',email:'manu@gmail.com'},
+    {name:'Manisha',email:'manu@gmail.com'},
+    {name:'Manuv',email:'manu@gmail.com'}
+]
+module.exports=data; -->
+---we get data on localhost:5001
+<!-- [{"name":"Manu","email":"manu@gmail.com"},{"name":"Manisha","email":"manu@gmail.com"},{"name":"Manuv","email":"manu@gmail.com"}] -->
+check this on postman:
+
+
